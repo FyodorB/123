@@ -21,14 +21,7 @@ while True:
         if animal.startswith(choice_letter):
             value_animal += 1
     dict_animal.update(({choice_letter: value_animal}))
-
-    for key in dict_animal:
-        try:
-            dict_animal_res[key] += int(dict_animal[key])
-        except:
-            dict_animal_res[key] = int(dict_animal[key])
-
-    for key, value in dict_animal_res.items():
+    for key, value in dict_animal.items():
         print(f"{key}: {value}")
 
     links = soup.find('div', id='mw-pages').find_all('a')
