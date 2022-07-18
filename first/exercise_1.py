@@ -1,10 +1,15 @@
-def task(arr, N):
-    for x, y in enumerate(arr):
-        if y == N:
-            return x
-    return -1
+#реализован бинарный поиск
 
+a = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+left = -1
+right = len(a)
 
-s = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0]
-print(task(s, 0))
+while right - left > 1:
+    middle = (right + left) // 2
+    if a[middle] == 1:
+        right = middle
+    else:
+        left = middle
 
+print(a[left])
+print(a[right])

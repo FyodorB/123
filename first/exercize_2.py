@@ -1,3 +1,4 @@
+#реализован подсчет количества животных в википедии на каждую букву алфавитов
 import requests
 from bs4 import BeautifulSoup
 
