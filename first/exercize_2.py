@@ -28,13 +28,13 @@ while True:
     links = soup.find('div', id='mw-pages').find_all('a')
 
     # print(links[-1].text)
-    if links[-1].text == 'Предыдущая страница':
-        print('выход с цикла')
-        break
+
     for a in links:
         if a.text == 'Следующая страница':
             url = 'https://ru.wikipedia.org/' + a.get('href')
             page = requests.get(url).text
-
+    if links[-1].text == 'Предыдущая страница':
+        print('выход с цикла')
+        break
 
 
