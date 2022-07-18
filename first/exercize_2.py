@@ -23,16 +23,18 @@ while True:
     dict_animal.update(({choice_letter: value_animal}))
     for key, value in dict_animal.items():
         print(f"{key}: {value}")
+    # print(lst_animal[-1])
 
     links = soup.find('div', id='mw-pages').find_all('a')
+
+    # print(links[-1].text)
+    if links[-1].text == 'Предыдущая страница':
+        print('выход с цикла')
+        break
     for a in links:
         if a.text == 'Следующая страница':
             url = 'https://ru.wikipedia.org/' + a.get('href')
             page = requests.get(url).text
-
-
-
-
 
 
 
